@@ -1,4 +1,4 @@
-var buttonList = [
+const buttonList = [
     {
         name: 'Apple Laptop',
         category: 'Technology'
