@@ -9,7 +9,7 @@ $(document).ready(function () {
     //Render our buttons on the page so we can start using them
     const render = function () {
         for (let i = 0; i < buttonList.length; i++) {
-            const shopBtn = $('<button>').addClass('proj-button proj proj-button-color').attr('data-proj', buttonList[i].name).text(buttonList[i].name);
+            const shopBtn = $('<button>').addClass('proj-button proj proj-button-color').attr('btn-name', buttonList[i].name).text(buttonList[i].name);
             $('#buttons').append(shopBtn);
         }
     }
@@ -24,9 +24,26 @@ $(document).ready(function () {
 
 
     //Add items to the Cart List box
-    const addItems = function (){
-        const item = $('<div>').addClass('proj task-color').text($(this).attr("data-proj"));
+    const addItems = function () {
+        const item = $('<button>').addClass('btn btn-outline-secondary').text($(this).attr("btn-name"));
         $('#display').append(item);
     }
     $('#buttons').on('click', '.proj-button', addItems);
+
+
+    //Event listener to show buttons based on filter
+    const buttonVal = function (e) {
+        e.preventDefault();
+        const techValue = parseInt($(this).data('technology-value'));
+        const groceryValue = parseInt($(this).data('grocery-value'));
+        const clothingValue = parseInt($(this).data('clothing-value'));
+        //const digit = parseInt($(this).val());
+        console.log(`Value returning is: ${techValue} ${groceryValue} ${clothingValue}`);
+        for (let i = 0; i < buttonList.length; i++) {
+            if (buttonList[i].value !== techValue) {
+                $('#buttons').hide();
+            }
+        }
+    }
+    $('#filter-btn').on('click', buttonVal);
 });

@@ -1,51 +1,63 @@
 const buttonList = [
     {
         name: 'Apple Laptop',
-        category: 'Technology'
+        category: 'Technology',
+        value: 1
     },
     {
         name: 'Apple iPhone',
-        category: 'Technology'
+        category: 'Technology',
+        value: 1
     },
     {
         name: 'Apple Watch',
-        category: 'Technology'
+        category: 'Technology',
+        value: 1
     },
     {
         name: 'Windows Laptop',
-        category: 'Technology'
+        category: 'Technology',
+        value: 1
     },
     {
         name: 'Bananas',
-        category: 'Grocery'
+        category: 'Grocery',
+        value: 2
     },
     {
         name: 'Apples',
-        category: 'Grocery'
+        category: 'Grocery',
+        value: 2
     },
     {
         name: 'Juice',
-        category: 'Grocery'
+        category: 'Grocery',
+        value: 2
     },
     {
         name: 'Eggs',
-        category: 'Grocery'
+        category: 'Grocery',
+        value: 2
     },
     {
         name: 'Jackets',
-        category: 'Clothing'
+        category: 'Clothing',
+        value: 3
     },
     {
-        name: 'Seaters',
-        category: 'Clothing'
+        name: 'Sweaters',
+        category: 'Clothing',
+        value: 3
     },
     {
         name: 'T-Shirts',
-        category: 'Clothing'
+        category: 'Clothing',
+        value: 3
     },
     {
         name: 'Tennis Shoes',
-        category: 'Clothing'
+        category: 'Clothing',
+        value: 3
     },
 
 ];

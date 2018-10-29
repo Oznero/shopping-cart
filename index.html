@@ -26,7 +26,7 @@
         <!-- Button list -->
         <h1> Cart items </h1>
         <div id="buttons"></div>
-        <button id="clear">clear</button>
+        <button type="button" id="clear" class="btn btn-danger">Clear</button>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,9 +40,9 @@
                             Filter
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Technology</a>
-                            <a class="dropdown-item" href="#">Grocery</a>
-                            <a class="dropdown-item" href="#">Clothing</a>
+                            <a class="dropdown-item" id="filter-btn" href="#" role="button" data-technology-value="1">Technology</a>
+                            <a class="dropdown-item" id="filter-btn" href="#" role="button" data-grocery-value="2">Grocery</a>
+                            <a class="dropdown-item" id="filter-btn" href="#" role="button" data-clothing-value="3">Clothing</a>
                         </div>
                     </li>
                 </ul>
@@ -53,8 +53,6 @@
     <!-- Javscript files -->
     <script src="./assets/javascript/index.js"></script>
     <script src="./assets/javascript/buttonList.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 </body>

@@ -31,7 +31,7 @@ body {
     border: 1px solid #333;
     height: 340px;
     padding: 5px;
-    background: #dfe3e6;
+    background: white;
     margin-bottom: 10px;
   }
   
@@ -48,7 +48,6 @@ body {
   }
   
   #clear {
-    background: #40bcd9;
     padding: 5px 20px;
     color: white;
     font-size: 1.2em;
