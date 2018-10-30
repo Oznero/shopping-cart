@@ -9,7 +9,7 @@ $(document).ready(function () {
     //Render our buttons on the page so we can start using them
     const render = function () {
         for (let i = 0; i < buttonList.length; i++) {
-            const shopBtn = $('<button>').addClass(`proj-button proj proj-button-color ${buttonList[i].value}`).attr('btn-name', buttonList[i].name).text(buttonList[i].name);
+            const shopBtn = $('<button>').addClass(`proj-button proj proj-button-color ${buttonList[i].value} ${buttonList[i].category}`).attr('btn-name', buttonList[i].name).text(buttonList[i].name);
             $('#buttons').append(shopBtn);
         }
     }
@@ -32,22 +32,26 @@ $(document).ready(function () {
 
 
     //Event listener to show buttons based on filter
-    const buttonVal = function (e) {
-        e.preventDefault();
-        const techValue = parseInt($(this).data('technology-value'));
-        const groceryValue = parseInt($(this).data('grocery-value'));
-        const clothingValue = parseInt($(this).data('clothing-value'));
-        //const digit = parseInt($(this).val());
-        console.log(`Value returning is: ${techValue} ${groceryValue} ${clothingValue}`);
+    const buttonVal = function () {
+
+        console.log(`Value that was clicked: ${$(this).attr('value')}`);
+        const filterVal = parseInt($(this).attr('value'));
         for (let i = 0; i < buttonList.length; i++) {
-            if (buttonList[i].value !== techValue) {
-                $('#buttons').hide();
+            if (buttonList[i].value === filterVal) {
+                $(`.${filterVal}`).hide();
             }
         }
     }
-    $('#filter-btn').on('click', buttonVal);
+    $('.filter-btn').on('click', buttonVal);
 
-    
+
+    //Event listener to show All buttons again
+    const showAll = function () {
+        $('.proj-button').show();
+    }
+
+    $('#all').on('click', showAll);
+
     //Event listener to remove items from shopping cart
     const removeCartItem = function () {
         $('.cart-item').remove();
