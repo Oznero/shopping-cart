@@ -25,21 +25,19 @@ $(document).ready(function () {
 
     //Add items to the Cart List box
     const addItems = function () {
-        const item = $('<button>').addClass('btn btn-outline-secondary cart-item').text($(this).attr("btn-name"));
+        var randomNum = Math.floor(100000000 + Math.random() * 900000000);
+        const item = $(`<button type="button" id="cart-item" class="btn btn-outline-danger" value="${randomNum}"></button>`).text($(this).attr("btn-name"));
         $('#display').append(item);
     }
     $('#buttons').on('click', '.proj-button', addItems);
 
-
     //Event listener to show buttons based on filter
     const buttonVal = function () {
-
-        //console.log(`Value that was clicked: ${$(this).attr('value')}`);
         const filterVal = parseInt($(this).attr('value'));
         for (let i = 0; i < buttonList.length; i++) {
             if (buttonList[i].value !== filterVal) {
                 $(`.${buttonList[i].value}`).hide();
-            }else{
+            } else {
                 $(`.${buttonList[i].value}`).show();
             }
         }
@@ -56,8 +54,8 @@ $(document).ready(function () {
 
     //Event listener to remove items from shopping cart
     const removeCartItem = function () {
-        $('.cart-item').remove();
+        $(this).remove();
     }
 
-    $('.cart-item').on('click', removeCartItem);
+    $('#display').on('click', '#cart-item', removeCartItem);
 });
