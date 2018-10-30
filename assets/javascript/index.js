@@ -34,11 +34,13 @@ $(document).ready(function () {
     //Event listener to show buttons based on filter
     const buttonVal = function () {
 
-        console.log(`Value that was clicked: ${$(this).attr('value')}`);
+        //console.log(`Value that was clicked: ${$(this).attr('value')}`);
         const filterVal = parseInt($(this).attr('value'));
         for (let i = 0; i < buttonList.length; i++) {
-            if (buttonList[i].value === filterVal) {
-                $(`.${filterVal}`).hide();
+            if (buttonList[i].value !== filterVal) {
+                $(`.${buttonList[i].value}`).hide();
+            }else{
+                $(`.${buttonList[i].value}`).show();
             }
         }
     }
