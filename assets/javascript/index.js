@@ -9,7 +9,7 @@ $(document).ready(function () {
     //Render our buttons on the page so we can start using them
     const render = function () {
         for (let i = 0; i < buttonList.length; i++) {
-            const shopBtn = $('<button>').addClass('proj-button proj proj-button-color').attr('btn-name', buttonList[i].name).text(buttonList[i].name);
+            const shopBtn = $('<button>').addClass(`proj-button proj proj-button-color ${buttonList[i].value}`).attr('btn-name', buttonList[i].name).text(buttonList[i].name);
             $('#buttons').append(shopBtn);
         }
     }
@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     //Add items to the Cart List box
     const addItems = function () {
-        const item = $('<button>').addClass('btn btn-outline-secondary').text($(this).attr("btn-name"));
+        const item = $('<button>').addClass('btn btn-outline-secondary cart-item').text($(this).attr("btn-name"));
         $('#display').append(item);
     }
     $('#buttons').on('click', '.proj-button', addItems);
@@ -46,4 +46,12 @@ $(document).ready(function () {
         }
     }
     $('#filter-btn').on('click', buttonVal);
+
+    
+    //Event listener to remove items from shopping cart
+    const removeCartItem = function () {
+        $('.cart-item').remove();
+    }
+
+    $('.cart-item').on('click', removeCartItem);
 });
