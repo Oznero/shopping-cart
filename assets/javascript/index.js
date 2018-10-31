@@ -9,8 +9,10 @@ $(document).ready(function () {
     //Render our buttons on the page so we can start using them
     const render = function () {
         for (let i = 0; i < buttonList.length; i++) {
-            const shopBtn = $(`<button class="btn btn-outline-primary btn-sm ${buttonList[i].value} ${buttonList[i].category}" id="cart-button"></button>`).attr('btn-name', buttonList[i].name).text(buttonList[i].name);
-            $('#buttons').append(shopBtn);
+            $('#buttons').append(`<button class="btn btn-outline-primary btn-sm btn-${i} ${buttonList[i].value} cart-button">${buttonList[i].name}</button>`);
+            $(`.btn-${i}`).on('click', function () {
+                duplicateCheck(buttonList[i].name, i);
+            });
         }
     }
     render();
@@ -18,18 +20,22 @@ $(document).ready(function () {
 
     //Clear items off the Car List box
     const clear = function () {
-        $('#display').empty();
+        $('.cart-list').empty();
     }
     $('#clear').on('click', clear);
 
 
     //Add items to the Cart List box
-    const addItems = function () {
-        var randomNum = Math.floor(100000000 + Math.random() * 900000000);
-        const item = $(`<button type="button" id="cart-item" class="btn btn-outline-danger btn-sm" value="${randomNum}"></button>`).text($(this).attr("btn-name"));
-        $('#display').append(item);
+    function duplicateCheck(name, index) {
+        var cartList = $('.cart-list'), item = $(`.btn-${index}`);
+        for(let i = 0; i < cartList.length; i++){
+            if(item.text() === name){
+                cartList.append(`<button type="button" id="cart-item" class="btn btn-outline-danger btn-sm btn-${index}">${name}</button>`);
+            }else{
+                alert('Item exists in cart');
+            }
+        }
     }
-    $('#buttons').on('click', '#cart-button', addItems);
 
     //Event listener to show buttons based on filter
     const buttonVal = function () {
@@ -47,7 +53,7 @@ $(document).ready(function () {
 
     //Event listener to show All buttons again
     const showAll = function () {
-        $('#cart-button').show();
+        $('.cart-button').show();
     }
 
     $('#all').on('click', showAll);
@@ -57,5 +63,5 @@ $(document).ready(function () {
         $(this).remove();
     }
 
-    $('#display').on('click', '#cart-item', removeCartItem);
+    $('.cart-list').on('click', '#cart-item', removeCartItem);
 });

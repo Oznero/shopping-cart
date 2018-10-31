@@ -27,7 +27,7 @@ body {
     cursor: pointer;
   }
   
-  #display {
+  .cart-list {
     border: 1px solid #333;
     height: 340px;
     padding: 5px;
