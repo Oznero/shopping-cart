@@ -9,7 +9,7 @@ $(document).ready(function () {
     //Render our buttons on the page so we can start using them
     const render = function () {
         for (let i = 0; i < buttonList.length; i++) {
-            const shopBtn = $('<button>').addClass(`proj-button proj proj-button-color ${buttonList[i].value} ${buttonList[i].category}`).attr('btn-name', buttonList[i].name).text(buttonList[i].name);
+            const shopBtn = $(`<button class="btn btn-outline-primary btn-sm ${buttonList[i].value} ${buttonList[i].category}" id="cart-button"></button>`).attr('btn-name', buttonList[i].name).text(buttonList[i].name);
             $('#buttons').append(shopBtn);
         }
     }
@@ -26,10 +26,10 @@ $(document).ready(function () {
     //Add items to the Cart List box
     const addItems = function () {
         var randomNum = Math.floor(100000000 + Math.random() * 900000000);
-        const item = $(`<button type="button" id="cart-item" class="btn btn-outline-danger" value="${randomNum}"></button>`).text($(this).attr("btn-name"));
+        const item = $(`<button type="button" id="cart-item" class="btn btn-outline-danger btn-sm" value="${randomNum}"></button>`).text($(this).attr("btn-name"));
         $('#display').append(item);
     }
-    $('#buttons').on('click', '.proj-button', addItems);
+    $('#buttons').on('click', '#cart-button', addItems);
 
     //Event listener to show buttons based on filter
     const buttonVal = function () {
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
     //Event listener to show All buttons again
     const showAll = function () {
-        $('.proj-button').show();
+        $('#cart-button').show();
     }
 
     $('#all').on('click', showAll);
