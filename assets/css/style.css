@@ -3,7 +3,7 @@ body {
   }
   
   header {
-    background: #40bcd9;
+    background: #00BFFF;
     font-weight: bold;
     color: white;
     padding: 7px 20px;
@@ -33,18 +33,6 @@ body {
     padding: 5px;
     background: white;
     margin-bottom: 10px;
-  }
-  
-  
-  .task-color {
-    color: #333;
-    padding: 10px;
-    margin: 5px;
-    float: left;
-    width: 380px;
-    background: white;
-    box-shadow: 0 1px 0 rgba(9,45,66,.25);
-    border-radius: 3px;
   }
   
   #clear {

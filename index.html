@@ -19,36 +19,44 @@
         <h1>Shopping Cart</h1>
     </header>
     <main>
-        <!-- Cart list display box -->
-        <h1> Cart list </h1>
-        <div class="cart-list"></div>
-
-        <!-- Button list -->
-        <h1> Cart items </h1>
-        <div id="buttons"></div>
-        <button type="button" id="clear" class="btn btn-danger">Clear</button>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filter
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item filter-btn" href="#" role="button" value="1">Technology</a>
-                            <a class="dropdown-item filter-btn" href="#" role="button" value="2">Grocery</a>
-                            <a class="dropdown-item filter-btn" href="#" role="button" value="3">Clothing</a>
-                            <a class="dropdown-item filter-btn" href="#" role="button" id="all">All</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- Button list -->
+                    <h1> Cart items </h1>
+                    <div id="buttons"></div>
+                    <button type="button" id="clear" class="btn btn-danger">Clear</button>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Filter
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item filter-btn" href="#" role="button" value="1">Technology</a>
+                                        <a class="dropdown-item filter-btn" href="#" role="button" value="2">Grocery</a>
+                                        <a class="dropdown-item filter-btn" href="#" role="button" value="3">Clothing</a>
+                                        <a class="dropdown-item filter-btn" href="#" role="button" id="all">All</a>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </li>
-                </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-9">
+                    <!-- Cart list display box -->
+                    <h1> Cart list </h1>
+                    <div class="cart-list"></div>
+                    <div id="error"></div>
+                </div>
             </div>
-        </nav>
+        </div>
     </main>
 
     <!-- Javscript files -->
